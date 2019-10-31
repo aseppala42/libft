@@ -6,7 +6,7 @@
 #    By: aseppala <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 10:50:45 by aseppala          #+#    #+#              #
-#    Updated: 2019/10/31 17:08:14 by aseppala         ###   ########.fr        #
+#    Updated: 2019/10/31 18:32:59 by aseppala         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ft_strncat.c ft_islower.c ft_memdel.c ft_putstr_fd.c ft_strncmp.c ft_isprint.c\
 ft_memmove.c ft_strcat.c ft_strncpy.c ft_itoa.c ft_lstmap.c ft_realloc.c\
 ft_striter.c ft_strmap.c ft_strnequ.c ft_lstdel.c ft_lstnew.c ft_strclr.c\
 ft_striteri.c ft_strmapi.c ft_strsplit.c ft_lstdelone.c ft_memchr.c ft_strequ.c\
-ft_strjoin.c ft_strndup.c ft_strsub.c ft_chrjoin.c
+ft_strjoin.c ft_strndup.c ft_strsub.c ft_chrjoin.c ft_strchrlen.c
 OBJ = $(SRC:.c=.o)
 HDR = libft.h
 

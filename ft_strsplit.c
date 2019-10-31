@@ -6,20 +6,14 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 14:22:09 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/30 17:10:48 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/10/31 18:35:55 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strchrlen(const char *s, char c)
-{
-	if (*s == c || *s == 0)
-		return (0);
-	return (1 + ft_strlen(++s));
-}
-
-static char	**ft_split_and_add(char const *s, char c, char **array, size_t count)
+static char	**ft_split_and_add(char const *s, char c, \
+		char **array, size_t count)
 {
 	if (*s == 0)
 		return (array);

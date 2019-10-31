@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strchrlen.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 14:07:00 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 18:25:44 by aseppala         ###   ########.fr       */
+/*   Created: 2019/10/31 18:31:30 by aseppala          #+#    #+#             */
+/*   Updated: 2019/10/31 18:31:38 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+size_t	ft_strchrlen(const char *s, char c)
 {
-	void	*mem;
-
-	if (!(mem = (void *)malloc(size)))
+	if (*s == c || *s == 0)
 		return (0);
-	ft_bzero(mem, size);
-	return (mem);
+	return (1 + ft_strlen(++s));
 }

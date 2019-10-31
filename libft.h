@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:53 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 17:07:57 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/10/31 18:32:42 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,5 +107,6 @@ int		ft_isspace(int c);
 char	*ft_strndup(const char *s1, size_t n);//
 //void	ft_foreach();
 char	*ft_chrjoin(char c1, char c2);
+size_t	ft_strchrlen(const char *s, char c);
 
 #endif
