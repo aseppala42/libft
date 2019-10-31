@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 14:36:12 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 11:29:24 by aseppala         ###   ########.fr       */
+/*   Created: 2019/10/30 18:26:42 by aseppala          #+#    #+#             */
+/*   Updated: 2019/10/30 19:02:58 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else if (n < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-n);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-		ft_putchar(n + '0');
+	if (lst == 0)
+		return (0);
+	return (ft_lstadd(&ft_lstmap(lst->next, f), f(ft_lstnew(lst->content, lst->content_size))));
 }

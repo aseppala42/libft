@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 14:36:12 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 11:29:24 by aseppala         ###   ########.fr       */
+/*   Created: 2019/10/30 13:50:52 by aseppala          #+#    #+#             */
+/*   Updated: 2019/10/30 14:21:44 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+char	*ft_itoa(int n)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else if (n < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-n);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-		ft_putchar(n + '0');
+	if (n  == -2147483648)
+		return ("-2147483648");
+	if (n < 0)
+		return (ft_strjoin("-", ft_itoa(-n)));
+	if (n > 9)
+		return (ft_strjoin(ft_itoa(n / 10), n % 10 + '0'));
+	return (n % 10 + '0');
 }

@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 14:36:12 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 11:29:24 by aseppala         ###   ########.fr       */
+/*   Created: 2019/10/30 15:29:32 by aseppala          #+#    #+#             */
+/*   Updated: 2019/10/30 16:10:03 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 {
-	if (n == -2147483648)
-		ft_putstr("-2147483648");
-	else if (n < 0)
-	{
-		ft_putchar('-');
-		ft_putnbr(-n);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr(n / 10);
-		ft_putnbr(n % 10);
-	}
-	else
-		ft_putchar(n + '0');
+	char	*re_ptr;
+	
+	if (!(re_ptr = ft_memalloc(new_size)) || old_size > new_size)
+		return (0);
+	ft_memcpy(re_ptr, ptr, old_size);
+	free(ptr);
+	return (re_ptr);
 }
