@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_chrjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 14:40:25 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 17:34:57 by aseppala         ###   ########.fr       */
+/*   Created: 2019/10/31 17:06:21 by aseppala          #+#    #+#             */
+/*   Updated: 2019/10/31 17:07:17 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	int		i;
+#include "libft.h"
 
-	i = 0;
-	while (*s != 0)
-		f(i++, s++);
+char	*ft_chrjoin(char c1, char c2)
+{
+	char	*s;
+
+	if (!(s = ft_strnew(3)))
+		return (0);
+	*s = c1;
+	*(s + 1) = c2;
+	*(s + 2) = 0;
+	return (s);
 }
