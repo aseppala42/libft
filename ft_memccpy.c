@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 17:36:09 by aseppala          #+#    #+#             */
-/*   Updated: 2019/11/02 20:46:09 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/03 14:24:25 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memccpy(void *restrict dst, const void *restrict src, \
 {
 	if (n == 0 || src == 0)
 		return (0);
+	*(unsigned char *)dst = *(unsigned char *)src;
 	if (*(unsigned char *)dst == (unsigned char)c)
 		return (++dst);
-	*(unsigned char *)dst = *(unsigned char *)src;
 	return (ft_memccpy(++dst, ++src, c, --n));
 }
