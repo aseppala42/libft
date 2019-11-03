@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:48:02 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/23 11:16:38 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/02 15:32:47 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,12 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	if (len != 0 && *src != 0)
-	{
-		*dst = *src;
+	if (len == 0 || src == 0)
+		return (dst);
+	*dst = *src;
+	if (*src != 0)
 		ft_strncpy(dst + 1, ++src, --len);
-	}
-	else if (len != 0 && *src == 0)
-	{
-		*dst = 0;
+	else if (*src == 0)
 		ft_strncpy(dst + 1, src, --len);
-	}
 	return (dst);
 }

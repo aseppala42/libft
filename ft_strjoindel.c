@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_strjoindel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/30 15:29:32 by aseppala          #+#    #+#             */
-/*   Updated: 2019/11/02 23:09:30 by aseppala         ###   ########.fr       */
+/*   Created: 2019/11/03 12:20:49 by aseppala          #+#    #+#             */
+/*   Updated: 2019/11/03 12:33:02 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
+char	*ft_strjoindel(char *s1, char *s2)
 {
-	void	*new_ptr;
+	char	*str;
 
-	if (ptr == 0)
-		return (ft_memalloc(new_size));
-	if (old_size > new_size)
-		return (ptr);
-	if (!(new_ptr = ft_memalloc(new_size)))
+	if (s1 == 0 && s2 == 0)
 		return (0);
-	ft_memcpy(new_ptr, ptr, old_size);
-	free(ptr);
-	return (new_ptr);
+	if (s1 == 0 && s2 != 0)
+	{
+		str = ft_strdup(s2);
+		ft_strdel(&s2);
+		return (str);
+	}
+	if (s1 != 0 && s2 == 0)
+	{
+		str = ft_strdup(s1);
+		ft_strdel(&s1);
+		return (str);
+	}
+	if (!(str = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+		return (0);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	ft_strdel(&s1);
+	ft_strdel(&s2);
+	return (str);
 }

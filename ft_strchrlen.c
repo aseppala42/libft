@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 18:31:30 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 18:31:38 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/03 13:18:31 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ size_t	ft_strchrlen(const char *s, char c)
 {
 	if (*s == c || *s == 0)
 		return (0);
-	return (1 + ft_strlen(++s));
+	return (1 + ft_strchrlen(++s, c));
 }

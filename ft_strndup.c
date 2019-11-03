@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/30 12:35:37 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 14:02:26 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/01 21:40:25 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*cpy;
 
-	if (!(cpy = ft_strnew(n + 1)))
+	if (!(cpy = ft_strnew(n)))
 		return (0);
 	ft_strncpy(cpy, s1, n);
 	cpy[n] = 0;

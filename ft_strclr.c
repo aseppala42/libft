@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 14:30:50 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 13:02:24 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/01 20:24:41 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_strclr(char *s)
 {
-	ft_bzero(s, ft_strlen(s));
+	if (s != 0)
+		ft_bzero(s, ft_strlen(s));
 }

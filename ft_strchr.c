@@ -6,13 +6,13 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 12:50:36 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/22 11:27:16 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/01 19:36:28 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (*s == c)
+	if (*s == (char)c)
 		return ((char *)s);
 	if (*s == 0)
 		return (0);

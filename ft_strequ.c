@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 16:49:54 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/23 16:57:48 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/02 22:15:52 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
+	if (s1 == 0 || s2 == 0)
+		return (0);
 	return (!(ft_strcmp(s1, s2)));
 }

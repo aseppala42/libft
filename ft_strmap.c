@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 14:49:45 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 17:35:48 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/02 22:00:53 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	ft_mapiter(char *s, char (*f)(char))
 {
-	if (*s == 0)
+	if (s == 0 || *s == 0)
 		return ;
-	f(*s);
+	*s = f(*s);
 	ft_mapiter(++s, f);
 }
 
@@ -24,6 +24,8 @@ char		*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*map;
 
+	if (s == 0)
+		return (0);
 	if (!(map = ft_strdup(s)))
 		return (0);
 	ft_mapiter(map, f);

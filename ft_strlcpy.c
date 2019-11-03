@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 14:40:25 by aseppala          #+#    #+#             */
-/*   Updated: 2019/11/01 21:11:47 by aseppala         ###   ########.fr       */
+/*   Created: 2019/11/01 21:25:58 by aseppala          #+#    #+#             */
+/*   Updated: 2019/11/03 13:42:53 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
-	int		i;
+#include "libft.h"
 
-	if (s == 0)
-		return ;
-	i = 0;
-	while (*s != 0)
-		f(i++, s++);
+size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+{
+	if (src == 0)
+		return (0);
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	*dst = *src;
+	if (*src != 0 && dstsize != 1)
+		ft_strlcpy(++dst, src + 1, --dstsize);
+	if (dstsize == 1)
+		*dst = 0;
+	return (ft_strlen(src));
 }

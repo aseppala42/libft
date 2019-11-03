@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:08:04 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/18 14:15:23 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/01 16:07:17 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putstr(char const *s)
 {
-	if (*s == 0)
-		return ;
-	write(1, s, ft_strlen(s));
+	if (s != 0 && *s != 0)
+		write(1, s, ft_strlen(s));
 }

@@ -6,13 +6,13 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 14:34:55 by aseppala          #+#    #+#             */
-/*   Updated: 2019/10/31 12:52:12 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/01 21:11:05 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (*s == 0)
+	if (s == 0 || *s == 0)
 		return ;
 	f(s);
 	ft_striter(++s, f);
