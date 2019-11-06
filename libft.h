@@ -6,7 +6,7 @@
 /*   By: aseppala <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:48:53 by aseppala          #+#    #+#             */
-/*   Updated: 2019/11/03 13:56:30 by aseppala         ###   ########.fr       */
+/*   Updated: 2019/11/06 14:21:55 by aseppala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ size_t				ft_strlcpy(char *restrict dst, const char *restrict src, \
 					size_t dstsize);
 char				*ft_strjoindel(char *s1, char *s2);
 size_t				ft_strcount(const char *s, char c);
+char				*ft_itoafree(int n);
 
 #endif
