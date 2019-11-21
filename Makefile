@@ -6,7 +6,7 @@
 #    By: aseppala <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/17 10:50:45 by aseppala          #+#    #+#              #
-#    Updated: 2019/11/06 14:23:14 by aseppala         ###   ########.fr        #
+#    Updated: 2019/11/20 19:46:40 by aseppala         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,14 @@ ft_striteri.c ft_strmapi.c ft_strsplit.c ft_lstdelone.c ft_memchr.c ft_strequ.c\
 ft_strjoin.c ft_strndup.c ft_strsub.c ft_chrjoin.c ft_strchrlen.c ft_strlcpy.c\
 ft_strjoindel.c ft_strcount.c ft_itoafree.c
 OBJ = $(SRC:.c=.o)
-HDR = libft.h
+HDR = includes
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
 $(NAME):
-	gcc -c $(FLAGS) $(SRC) -I$(HDR)
+	gcc -c $(FLAGS) $(SRC) -I $(HDR)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
